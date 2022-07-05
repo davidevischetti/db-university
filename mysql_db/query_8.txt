@@ -1,4 +1,4 @@
 SELECT COUNT(`id`)
 AS `noPhoneTeachers`
 FROM `teachers` 
-WHERE `phone` NOT LIKE '@';
+WHERE `phone` IS NULL;
