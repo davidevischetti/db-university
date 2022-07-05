@@ -1,0 +1,3 @@
+SELECT `exam_id` AS `esame`, ROUND(AVG(vote), 2) AS `media_voto`
+FROM `exam_student`
+GROUP BY `esame`;
