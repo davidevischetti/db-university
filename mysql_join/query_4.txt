@@ -1,0 +1,5 @@
+SELECT CONCAT(students.surname, ' ', students.name) AS `complete_name`, degrees.*, departments.name AS `department`
+FROM `students`
+JOIN `degrees` ON students.degree_id = degrees.id
+JOIN `departments` ON degrees.department_id = departments.id
+ORDER BY `complete_name`;

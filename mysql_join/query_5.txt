@@ -1,0 +1,6 @@
+SELECT degrees.name AS `corso_di_laurea`, courses.name AS `corso`, CONCAT(teachers.surname, ' ',teachers.name) AS `docente`
+FROM `degrees`
+JOIN `courses` ON degrees.id = courses.degree_id
+JOIN `course_teacher` ON courses.id = course_teacher.course_id
+JOIN `teachers` ON course_teacher.teacher_id = teachers.id
+ORDER BY `corso_di_laurea`;

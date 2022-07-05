@@ -1,0 +1,7 @@
+SELECT CONCAT(students.surname, ' ',students.name) AS `student`, students.registration_number, courses.name AS `esame`, COUNT(courses.id)
+FROM `students`
+JOIN `exam_student` ON students.id = exam_student.student_id
+JOIN `exams` ON exam_student.exam_id = exams.id
+JOIN `courses` ON exams.course_id = courses.id
+GROUP BY courses.id, students.registration_number, `student`
+ORDER BY `student`;
